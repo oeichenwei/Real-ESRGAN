@@ -1,5 +1,5 @@
 # general settings
-name: train_SRVGGNetCompact_Meeting
+name: train_RealESRNetx4plus_1000k_B12G4
 model_type: RealESRNetModel
 scale: 4
 num_gpu: auto  # auto: can infer from your visible devices automatically. official: 4 GPUs
@@ -70,13 +70,13 @@ datasets:
     prefetch_mode: ~
 
   # Uncomment these for validation
- val:
+  val:
     name: validation
     type: PairedImageDataset
     dataroot_gt: tests/data/gt
     dataroot_lq: tests/data/lq
     io_backend:
-       type: disk
+      type: disk
 
 # network structures
 network_g:
@@ -119,15 +119,15 @@ train:
 
 # Uncomment these for validation
 # validation settings
-val:
-   val_freq: !!float 5e3
-   save_img: True
+  val:
+    val_freq: !!float 5e3
+    save_img: True
 
-   metrics:
-     psnr: # metric name
-       type: calculate_psnr
-       crop_border: 4
-       test_y_channel: false
+    metrics:
+      psnr: # metric name
+        type: calculate_psnr
+        crop_border: 4
+        test_y_channel: false
 
 # logging settings
 logger:
