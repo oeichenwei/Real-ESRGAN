@@ -33,7 +33,7 @@ queue_size: 180
 # dataset and data loader settings
 datasets:
   train:
-    name: Humans
+    name: Meeting
     type: RealESRGANDataset
     dataroot_gt: datasets/Meeting
     meta_info: datasets/Meeting/meta_info/meta_info_Meeting_multiscale.txt
