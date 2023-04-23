@@ -3,6 +3,21 @@ import glob
 import os
 from PIL import Image
 
+def clear(args):
+    path_list = sorted(glob.glob(os.path.join(args.input, '*')))
+    idx = 0
+    for path in path_list:
+        print(path)
+        basename = os.path.splitext(os.path.basename(path))[0]
+
+        img = Image.open(path)
+        width, height = img.size
+        if width < 600 or height < 600:
+            continue
+        if width > 2000 or height > 2000:
+            continue
+        idx += 1
+        img.save(os.path.join(args.output, f'{idx}.png'))
 
 def main(args):
     # For DF2K, we consider the following three scales,
@@ -40,9 +55,10 @@ if __name__ == '__main__':
     It is now used for DF2K dataset (DIV2K + Flickr 2K)
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument('--input', type=str, default='datasets/DF2K/DF2K_HR', help='Input folder')
-    parser.add_argument('--output', type=str, default='datasets/DF2K/DF2K_multiscale', help='Output folder')
+    parser.add_argument('--input', type=str, default='datasets/Humans/Humans_HR', help='Input folder')
+    parser.add_argument('--output', type=str, default='datasets/Humans/Humans_multiscale', help='Output folder')
     args = parser.parse_args()
 
     os.makedirs(args.output, exist_ok=True)
     main(args)
+    #clear(args)

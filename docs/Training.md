@@ -119,7 +119,7 @@ You can merge several folders into one meta_info txt. Here is the example:
 
     Train with **a single GPU** in the *debug* mode:
     ```bash
-    python realesrgan/train.py -opt options/train_realesrnet_x4plus.yml --debug
+    python realesrgan/train.py -opt options/train_realesrnet_x2plus.yml --debug
     ```
 1. The formal training. We use four GPUs for training. We use the `--auto_resume` argument to automatically resume the training if necessary.
     ```bash
@@ -129,7 +129,7 @@ You can merge several folders into one meta_info txt. Here is the example:
 
     Train with **a single GPU**:
     ```bash
-    python realesrgan/train.py -opt options/train_realesrnet_x4plus.yml --auto_resume
+    python realesrgan/train.py -opt options/train_srvgg_x4.yml --auto_resume
     ```
 
 ### Train Real-ESRGAN

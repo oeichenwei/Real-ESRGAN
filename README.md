@@ -270,3 +270,7 @@ Thanks for all the contributors.
 - [Asiimoviet](https://github.com/Asiimoviet): Translate the README.md to Chinese (中文).
 - [2ji3150](https://github.com/2ji3150): Thanks for the [detailed and valuable feedbacks/suggestions](https://github.com/xinntao/Real-ESRGAN/issues/131).
 - [Jared-02](https://github.com/Jared-02): Translate the Training.md to Chinese (中文).
+
+ssh ubuntu@124.221.218.125 -i my_win10.pem
+
+ nohup python realesrgan/train.py -opt options/train_srvgg_x4.yml --auto_resume > nohup.log &

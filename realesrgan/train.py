@@ -2,6 +2,10 @@
 import os.path as osp
 from basicsr.train import train_pipeline
 
+import sys, os
+curr_path = os.path.dirname(__file__)
+sys.path.insert(0, curr_path)
+
 import realesrgan.archs
 import realesrgan.data
 import realesrgan.models
